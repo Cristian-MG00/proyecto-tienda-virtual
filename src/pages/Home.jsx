@@ -8,7 +8,8 @@ const Home = () => {
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [image, setImage] = useState("");
-  const [productToEdit, setProductToEdit] = useState();
+  const [productToEdit, setProductToEdit] = useState({});
+  const [succes, setSucces] = useState("");
 
   // Obtener la lista de productos con fetch (GET)
   const fetchingProducts = async () => {
@@ -37,10 +38,13 @@ const Home = () => {
     setProductToEdit(product);
   };
 
-  // Cuando se envia el producto con los datos actualizados creo un objeto con los mismos.
-  const hundleSubmitPopup = (e) => {
+  // Cuando se envia el producto con los datos actualizados creo un objeto con los mismos, ya que quedan guardados en los estados.
+  // Hago la petición para enviar la actualizacion de un producto, enviandole los datos actualizados
+  // la api me devuelve el producto actualizado y lo inlcuyo en la lista por el producto desactualizado, haciendo el reemplazo con map().
+  // por ultimo cambio el estado de succes por un mensaje de actualizacion exitosa
+  const hundleSubmitPopup = async (e) => {
     e.preventDefault();
-    const productEdited = {
+    const updatedProduct = {
       id: productToEdit.id,
       title: name,
       price: price,
@@ -48,26 +52,30 @@ const Home = () => {
       category: category,
       image: image,
     };
-    console.log(productEdited.price);
-    setProductToEdit(productEdited);
-    console.log(productToEdit.price);
+    const response = await fetch(
+      `https://fakestoreapi.com/products/${updatedProduct.id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedProduct),
+      }
+    );
+    const updatedData = await response.json();
+    console.log(updatedData);
+    setProducts((prevProducts) =>
+      prevProducts.map((product) =>
+        product.id === updatedData.id ? updatedData : product
+      )
+    );
 
-    // const response = await fetch(
-    //   `https://fakestoreapi.com/products/${product.id}`,
-    //   {
-    //     method: "PUT",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(productToEdit),
-    //   }
-    // );
-
-    // const data = await response.json();
-    // console.log(data.title);
+    setSucces("Actualizado con éxito");
   };
 
-  const hundleUpdate = async (product) => {};
+  const removePopup = () => {
+    setPopup(null);
+  };
 
   // borrar esto despues
   const num = 1;
@@ -79,7 +87,7 @@ const Home = () => {
 
       {popup && (
         <div>
-          <button>Cerrar</button>
+          <button onClick={removePopup}>Cerrar</button>
           <h2>Actualizar datos</h2>
           <form onSubmit={(e) => hundleSubmitPopup(e)}>
             <label>
@@ -128,6 +136,8 @@ const Home = () => {
               />
             </label>
             <button>Actualizar</button>
+
+            {succes && <p>{succes}</p>}
           </form>
         </div>
       )}
