@@ -77,6 +77,19 @@ const Home = () => {
     setPopup(null);
   };
 
+  // peticion para eliminar un producto
+  const hundleDelete = async (id) => {
+    const response = await fetch(`https://fakestoreapi.com/products/${id}`, {
+      method: "DELETE",
+    });
+
+    if (response.ok) {
+      setProducts((prevProducts) =>
+        prevProducts.filter((product) => product.id != id)
+      );
+    }
+  };
+
   // borrar esto despues
   const num = 1;
 
@@ -163,7 +176,9 @@ const Home = () => {
             {num && (
               <div>
                 <button onClick={() => showPopup(product)}>Actualizar</button>
-                <button onClick={() => hundleDelete()}>Eliminar</button>
+                <button onClick={() => hundleDelete(product.id)}>
+                  Eliminar
+                </button>
               </div>
             )}
           </div>
