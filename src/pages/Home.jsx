@@ -90,6 +90,19 @@ const Home = () => {
     }
   };
 
+  const searchBar = async (e) => {
+    const search = e.target.value;
+    const allProducts = await fetch("https://fakestoreapi.com/products", {
+      method: "GET",
+    });
+    const allData = await allProducts.json();
+
+    const filteredProducts = allData.filter((product) => {
+      return product.title.toLowerCase().includes(search.toLowerCase());
+    });
+    setProducts(filteredProducts);
+  };
+
   // borrar esto despues
   const num = 1;
 
@@ -97,7 +110,13 @@ const Home = () => {
     <>
       <h1>Tienda Virtual</h1>
       <h2>Nuestros productos</h2>
-
+      <div>
+        <input
+          type="text"
+          placeholder="Buscar Producto"
+          onChange={(e) => searchBar(e)}
+        />
+      </div>
       {popup && (
         <div>
           <button onClick={removePopup}>Cerrar</button>
