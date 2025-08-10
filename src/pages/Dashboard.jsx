@@ -7,6 +7,7 @@ const Dashboard = () => {
   const [price, setPrice] = useState();
   const [category, setCategory] = useState();
   const [succes, setSucces] = useState("");
+  const [addedNewProduct, setAddedNewProduct] = useState(null);
 
   const hundleSubmit = async (e) => {
     e.preventDefault();
@@ -26,8 +27,8 @@ const Dashboard = () => {
       },
       body: JSON.stringify(newProduct),
     });
-
     const addedProduct = await addProduct.json();
+    setAddedNewProduct(addedProduct);
 
     setSucces("Producto agregado!");
   };
@@ -61,6 +62,28 @@ const Dashboard = () => {
         <button>Añadir producto</button>
       </form>
       {succes && <p>{succes}</p>}
+      {addedNewProduct && (
+        <div>
+          <p>
+            <strong>Producto: </strong>
+            {addedNewProduct.title}
+          </p>
+          <img
+            style={{ width: "80px" }}
+            src={addedNewProduct.image}
+            alt="Imagen del producto"
+          />
+          <p>
+            <strong>Descripción: </strong>
+            {addedNewProduct.description}
+          </p>
+          <p>
+            <strong>Precio: </strong>
+            {addedNewProduct.price}
+          </p>
+          <p>{addedNewProduct.category}</p>
+        </div>
+      )}
     </>
   );
 };
