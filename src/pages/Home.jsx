@@ -90,6 +90,10 @@ const Home = () => {
     }
   };
 
+  // guardo el valor del input en search
+  // traigo de nuevo los productos y los guardo en la variable allData, para cada vez que se ejecute el onChange, se filtre la lista original.
+  // filtro allData y guardo el nuevo array de productos en filteredProducts.
+  // le doy a products como nuevo valor el valor de filteredProducts
   const searchBar = async (e) => {
     const search = e.target.value;
     const allProducts = await fetch("https://fakestoreapi.com/products", {
