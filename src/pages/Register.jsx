@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Layout } from "../components/Layout";
 
 const Register = () => {
   const [username, setUsername] = useState("");
@@ -28,33 +29,35 @@ const Register = () => {
   };
 
   return (
-    <section>
-      <h2>Creá tu cuenta</h2>
-      <p>Ingresá tus datos</p>
-      <form onSubmit={hundleSubmit}>
-        <label>
-          Nombre de usuario:
-          <input type="text" onChange={(e) => setUsername(e.target.value)} />
-        </label>
-        <label>
-          Correo electrónico:
-          <input type="email" onChange={(e) => setEmail(e.target.value)} />
-        </label>
-        <label>
-          Contraseña:
-          <input
-            type="password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
-        <button>Crear cuenta</button>
-        {succes && (
-          <div>
-            <p>{succes}</p>
-          </div>
-        )}
-      </form>
-    </section>
+    <Layout>
+      <section>
+        <h2>Creá tu cuenta</h2>
+        <p>Ingresá tus datos</p>
+        <form onSubmit={hundleSubmit}>
+          <label>
+            Nombre de usuario:
+            <input type="text" onChange={(e) => setUsername(e.target.value)} />
+          </label>
+          <label>
+            Correo electrónico:
+            <input type="email" onChange={(e) => setEmail(e.target.value)} />
+          </label>
+          <label>
+            Contraseña:
+            <input
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </label>
+          <button>Crear cuenta</button>
+          {succes && (
+            <div>
+              <p>{succes}</p>
+            </div>
+          )}
+        </form>
+      </section>
+    </Layout>
   );
 };
 

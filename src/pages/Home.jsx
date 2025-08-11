@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Layout } from "../components/Layout";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -111,103 +112,105 @@ const Home = () => {
   const num = 1;
 
   return (
-    <section>
-      <h1>Tienda Virtual</h1>
-      <h2>Nuestros productos</h2>
-      <div>
-        <input
-          type="text"
-          placeholder="Buscar Producto"
-          onChange={(e) => searchBar(e)}
-        />
-      </div>
-      {popup && (
+    <Layout>
+      <section>
+        <h1>Tienda Virtual</h1>
+        <h2>Nuestros productos</h2>
         <div>
-          <button onClick={removePopup}>Cerrar</button>
-          <h2>Actualizar datos</h2>
-          <form onSubmit={(e) => hundleSubmitPopup(e)}>
-            <label>
-              Nombre:{" "}
-              <input
-                type="text"
-                placeholder="Nombre"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-            </label>
-            <label>
-              Precio:{" "}
-              <input
-                type="number"
-                placeholder="Precio"
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
-              />
-            </label>
-            <label>
-              Descripción:{" "}
-              <textarea
-                type="text"
-                placeholder="Descripción"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-              ></textarea>
-            </label>
-            <label>
-              Categoría:
-              <input
-                type="text"
-                placeholder="Categoría"
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}
-              />
-            </label>
-            <label>
-              image:
-              <input
-                type="text"
-                placeholder="URL de la imagen"
-                value={image}
-                onChange={(e) => setImage(e.target.value)}
-              />
-            </label>
-            <button>Actualizar</button>
-
-            {succes && <p>{succes}</p>}
-          </form>
+          <input
+            type="text"
+            placeholder="Buscar Producto"
+            onChange={(e) => searchBar(e)}
+          />
         </div>
-      )}
-
-      {products.map((product) => {
-        return (
+        {popup && (
           <div>
-            <p>
-              <strong>Producto: </strong>
-              {product.title}
-            </p>
-            <img style={{ width: "80px" }} src={product.image} alt="" />
-            <p>
-              <strong>Descripción: </strong>
-              {product.description}
-            </p>
-            <p>
-              <strong>Precio: </strong>
-              {product.price}
-            </p>
-            <p>{product.category}</p>
-            {/* aca va user en vez de num */}
-            {num && (
-              <div>
-                <button onClick={() => showPopup(product)}>Actualizar</button>
-                <button onClick={() => hundleDelete(product.id)}>
-                  Eliminar
-                </button>
-              </div>
-            )}
+            <button onClick={removePopup}>Cerrar</button>
+            <h2>Actualizar datos</h2>
+            <form onSubmit={(e) => hundleSubmitPopup(e)}>
+              <label>
+                Nombre:{" "}
+                <input
+                  type="text"
+                  placeholder="Nombre"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </label>
+              <label>
+                Precio:{" "}
+                <input
+                  type="number"
+                  placeholder="Precio"
+                  value={price}
+                  onChange={(e) => setPrice(e.target.value)}
+                />
+              </label>
+              <label>
+                Descripción:{" "}
+                <textarea
+                  type="text"
+                  placeholder="Descripción"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                ></textarea>
+              </label>
+              <label>
+                Categoría:
+                <input
+                  type="text"
+                  placeholder="Categoría"
+                  value={category}
+                  onChange={(e) => setCategory(e.target.value)}
+                />
+              </label>
+              <label>
+                image:
+                <input
+                  type="text"
+                  placeholder="URL de la imagen"
+                  value={image}
+                  onChange={(e) => setImage(e.target.value)}
+                />
+              </label>
+              <button>Actualizar</button>
+
+              {succes && <p>{succes}</p>}
+            </form>
           </div>
-        );
-      })}
-    </section>
+        )}
+
+        {products.map((product) => {
+          return (
+            <div>
+              <p>
+                <strong>Producto: </strong>
+                {product.title}
+              </p>
+              <img style={{ width: "80px" }} src={product.image} alt="" />
+              <p>
+                <strong>Descripción: </strong>
+                {product.description}
+              </p>
+              <p>
+                <strong>Precio: </strong>
+                {product.price}
+              </p>
+              <p>{product.category}</p>
+              {/* aca va user en vez de num */}
+              {num && (
+                <div>
+                  <button onClick={() => showPopup(product)}>Actualizar</button>
+                  <button onClick={() => hundleDelete(product.id)}>
+                    Eliminar
+                  </button>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </section>
+    </Layout>
   );
 };
 
