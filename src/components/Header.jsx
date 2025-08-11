@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const user = true;
+  // dar acceso de usuario en caso de corresponder
   return (
     <header>
       <nav>
