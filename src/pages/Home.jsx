@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Layout } from "../components/Layout";
+import { useAuth } from "../context/UserContext";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -11,6 +12,8 @@ const Home = () => {
   const [image, setImage] = useState("");
   const [productToEdit, setProductToEdit] = useState({});
   const [succes, setSucces] = useState("");
+
+  const { user } = useAuth();
 
   // Obtener la lista de productos con fetch (GET)
   const fetchingProducts = async () => {
@@ -108,9 +111,6 @@ const Home = () => {
     setProducts(filteredProducts);
   };
 
-  // borrar esto despues
-  const num = 1;
-
   return (
     <Layout>
       <section>
@@ -197,8 +197,7 @@ const Home = () => {
                 {product.price}
               </p>
               <p>{product.category}</p>
-              {/* aca va user en vez de num */}
-              {num && (
+              {user && (
                 <div>
                   <button onClick={() => showPopup(product)}>Actualizar</button>
                   <button onClick={() => hundleDelete(product.id)}>

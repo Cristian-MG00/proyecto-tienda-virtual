@@ -1,11 +1,16 @@
 import { useState } from "react";
 import { Layout } from "../components/Layout";
+import { useAuth } from "../context/UserContext";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [succes, setSucces] = useState("");
+
+  const { register } = useAuth();
+  const navigate = useNavigate();
 
   const hundleSubmit = async (e) => {
     e.preventDefault();
@@ -16,15 +21,13 @@ const Register = () => {
       password: password,
     };
 
-    const response = await fetch("https://fakestoreapi.com/users", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newUser),
-    });
+    const registered = register(newUser);
 
-    if (response.ok) {
+    if (registered) {
       setSucces("Registro realizado con exito!");
-      // redireccionar a home despues de unos segundos
+      navigate("/");
+    } else {
+      setError("Hay datos incorrectos, revisa e intenta de nuevo");
     }
   };
 
@@ -50,6 +53,11 @@ const Register = () => {
             />
           </label>
           <button>Crear cuenta</button>
+          {error && (
+            <div>
+              <p>{error}</p>
+            </div>
+          )}
           {succes && (
             <div>
               <p>{succes}</p>

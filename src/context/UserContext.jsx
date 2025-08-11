@@ -6,16 +6,37 @@ const UserContext = createContext();
 const UserProvider = (props) => {
   const [user, setUser] = useState(null);
 
-  const login = () => {
-    setUser(true);
+  const login = async (username, password) => {
+    const response = await fetch("https://fakestoreapi.com/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password }),
+    });
+    if (response.ok) {
+      setUser(true);
+      const token = await response.json();
+      return token;
+    } else {
+      return false;
+    }
   };
 
   const logout = () => {
     setUser(null);
   };
 
-  const register = () => {
-    setUser(true);
+  const register = async () => {
+    const response = await fetch("https://fakestoreapi.com/users", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newUser),
+    });
+    if (response.ok) {
+      setUser(true);
+      return true;
+    } else {
+      return false;
+    }
   };
 
   return (
@@ -25,6 +46,6 @@ const UserProvider = (props) => {
   );
 };
 
-const useAuth = useContext(UserContext);
+const useAuth = () => useContext(UserContext);
 
 export { UserProvider, useAuth };
