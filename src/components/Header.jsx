@@ -8,7 +8,7 @@ const Header = () => {
           {user && (
             <>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">Inicio</Link>
               </li>
               <li>
                 <Link to="/dashboard">Panel</Link>

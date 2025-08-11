@@ -34,7 +34,7 @@ const Dashboard = () => {
   };
 
   return (
-    <>
+    <section>
       <h1>Panel de usuario</h1>
       <h2>Agregá un nuevo producto</h2>
       <h3>Ingresa los datos del nuevo producto</h3>
@@ -84,7 +84,7 @@ const Dashboard = () => {
           <p>{addedNewProduct.category}</p>
         </div>
       )}
-    </>
+    </section>
   );
 };
 

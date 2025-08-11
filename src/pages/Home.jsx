@@ -111,7 +111,7 @@ const Home = () => {
   const num = 1;
 
   return (
-    <>
+    <section>
       <h1>Tienda Virtual</h1>
       <h2>Nuestros productos</h2>
       <div>
@@ -207,7 +207,7 @@ const Home = () => {
           </div>
         );
       })}
-    </>
+    </section>
   );
 };
 

@@ -4,9 +4,10 @@ import "./index.css";
 import { Home } from "./pages/Home";
 import { Dashboard } from "./pages/Dashboard";
 import { Login } from "./pages/Login";
+import { Register } from "./pages/Register";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Login />
+    <Register />
   </StrictMode>
 );

@@ -1,38 +1,44 @@
 import { useState } from "react";
 
-const Login = () => {
+const Register = () => {
   const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
   const [succes, setSucces] = useState("");
 
   const hundleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("https://fakestoreapi.com/auth/login", {
+    const newUser = {
+      id: crypto.randomUUID(),
+      username: username,
+      email: email,
+      password: password,
+    };
+
+    const response = await fetch("https://fakestoreapi.com/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify(newUser),
     });
+
     if (response.ok) {
-      const token = await response.json();
-      // dar acceso al usuario a su cuenta
-    } else {
-      setError("El usuario no existe");
+      setSucces("Registro realizado con exito!");
+      // redireccionar a home despues de unos segundos
     }
   };
 
   return (
     <section>
-      <h2>Ingresa a tu cuenta</h2>
-      <div>
-        <h4>Datos de prueba</h4>
-        <p>Nombre de usuario: hopkins</p>
-        <p>Contraseña: William56$hj</p>
-      </div>
+      <h2>Creá tu cuenta</h2>
+      <p>Ingresá tus datos</p>
       <form onSubmit={hundleSubmit}>
         <label>
           Nombre de usuario:
           <input type="text" onChange={(e) => setUsername(e.target.value)} />
+        </label>
+        <label>
+          Correo electrónico:
+          <input type="email" onChange={(e) => setEmail(e.target.value)} />
         </label>
         <label>
           Contraseña:
@@ -41,12 +47,15 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
-        <button>Ingresar</button>
-        {error && <p>{error}</p>}
-        {succes && <p>{succes}</p>}
+        <button>Crear cuenta</button>
+        {succes && (
+          <div>
+            <p>{succes}</p>
+          </div>
+        )}
       </form>
     </section>
   );
 };
 
-export { Login };
+export { Register };
