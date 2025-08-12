@@ -128,51 +128,56 @@ const Home = () => {
             <button onClick={removePopup}>Cerrar</button>
             <h2>Actualizar datos</h2>
             <form onSubmit={(e) => hundleSubmitPopup(e)}>
-              <label>
-                Nombre:{" "}
+              <div>
+                <label>Nombre: </label>
                 <input
                   type="text"
                   placeholder="Nombre"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
-              </label>
-              <label>
-                Precio:{" "}
+              </div>
+
+              <div>
+                <label>Precio: </label>
                 <input
                   type="number"
                   placeholder="Precio"
                   value={price}
                   onChange={(e) => setPrice(e.target.value)}
                 />
-              </label>
-              <label>
-                Descripción:{" "}
+              </div>
+
+              <div>
+                <label>Descripción: </label>
                 <textarea
                   type="text"
                   placeholder="Descripción"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                 ></textarea>
-              </label>
-              <label>
-                Categoría:
+              </div>
+
+              <div>
+                <label>Categoría: </label>
                 <input
                   type="text"
                   placeholder="Categoría"
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
                 />
-              </label>
-              <label>
-                image:
+              </div>
+
+              <div>
+                <label>image: </label>
                 <input
                   type="text"
                   placeholder="URL de la imagen"
                   value={image}
                   onChange={(e) => setImage(e.target.value)}
                 />
-              </label>
+              </div>
+
               <button>Actualizar</button>
 
               {succes && <p>{succes}</p>}

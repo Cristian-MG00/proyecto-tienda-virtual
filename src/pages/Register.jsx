@@ -60,30 +60,33 @@ const Register = () => {
         <h2>Creá tu cuenta</h2>
         <p>Ingresá tus datos</p>
         <form onSubmit={hundleSubmit}>
-          <label>
-            Nombre de usuario:
+          <div>
+            <label>Nombre de usuario: </label>
             <input
               type="text"
               onChange={(e) => setUsername(e.target.value)}
               placeholder="Mínimo 6 caracteres"
             />
-          </label>
-          <label>
-            Correo electrónico:
+          </div>
+
+          <div>
+            <label>Correo electrónico: </label>
             <input
               type="email"
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Ingresá un correo"
             />
-          </label>
-          <label>
-            Contraseña:
+          </div>
+
+          <div>
+            <label>Contraseña: </label>
             <input
               type="password"
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Mínimo 6 caracteres"
             />
-          </label>
+          </div>
+
           <button>Crear cuenta</button>
           {error && (
             <div>

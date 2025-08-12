@@ -18,7 +18,7 @@ const Login = () => {
       console.log(logged);
       navigate("/");
     } else {
-      setError("El usuario no existe");
+      setError("Datos incorrectos, intentelo nuevamente.");
     }
   };
 
@@ -32,17 +32,17 @@ const Login = () => {
           <p>Contraseña: William56$hj</p>
         </div>
         <form onSubmit={hundleSubmit}>
-          <label>
-            Nombre de usuario:
+          <div>
+            <label>Nombre de usuario: </label>
             <input type="text" onChange={(e) => setUsername(e.target.value)} />
-          </label>
-          <label>
-            Contraseña:
+          </div>
+          <div>
+            <label>Contraseña: </label>
             <input
               type="password"
               onChange={(e) => setPassword(e.target.value)}
             />
-          </label>
+          </div>
           <button>Ingresar</button>
           {error && <p>{error}</p>}
         </form>

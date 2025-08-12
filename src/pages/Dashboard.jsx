@@ -41,31 +41,37 @@ const Dashboard = () => {
         <h2>Agregá un nuevo producto</h2>
         <h3>Ingresa los datos del nuevo producto</h3>
         <form onSubmit={hundleSubmit}>
-          <label>
-            Nombre:
+          <div>
+            <label>Nombre: </label>
             <input type="text" onChange={(e) => setName(e.target.value)} />
-          </label>
-          <label>
-            URL de imagen:
+          </div>
+
+          <div>
+            <label>URL de imagen: </label>
             <input type="text" onChange={(e) => setImage(e.target.value)} />
-          </label>
-          <label>
-            Description:
+          </div>
+
+          <div>
+            <label>Description: </label>
             <input
               type="text"
               onChange={(e) => setDescription(e.target.value)}
             />
-          </label>
-          <label>
-            Precio:
+          </div>
+
+          <div>
+            <label>Precio: </label>
             <input type="number" onChange={(e) => setPrice(e.target.value)} />
-          </label>
-          <label>
-            Category:
+          </div>
+
+          <div>
+            <label>Category: </label>
             <input type="text" onChange={(e) => setCategory(e.target.value)} />
-          </label>
+          </div>
+
           <button>Añadir producto</button>
         </form>
+
         {succes && <p>{succes}</p>}
         {addedNewProduct && (
           <div>
