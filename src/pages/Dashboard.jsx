@@ -7,11 +7,21 @@ const Dashboard = () => {
   const [description, setDescription] = useState();
   const [price, setPrice] = useState();
   const [category, setCategory] = useState();
-  const [succes, setSucces] = useState("");
   const [addedNewProduct, setAddedNewProduct] = useState(null);
+  const [succes, setSucces] = useState("");
+  const [error, setError] = useState("");
 
   const hundleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
+    setSucces("");
+    setAddedNewProduct(null);
+
+    if (!name || !price || !description || !category || !image) {
+      setError("Debes completar todos los campos");
+      return;
+    }
+
     const newProduct = {
       id: crypto.randomUUID(),
       title: name,
@@ -34,6 +44,12 @@ const Dashboard = () => {
     setAddedNewProduct(addedProduct);
 
     setSucces("Producto agregado!");
+
+    setName("");
+    setImage("");
+    setDescription("");
+    setPrice("");
+    setCategory("");
   };
 
   return (
@@ -45,12 +61,20 @@ const Dashboard = () => {
         <form onSubmit={hundleSubmit}>
           <div>
             <label>Nombre: </label>
-            <input type="text" onChange={(e) => setName(e.target.value)} />
+            <input
+              type="text"
+              onChange={(e) => setName(e.target.value)}
+              value={name}
+            />
           </div>
 
           <div>
             <label>URL de imagen: </label>
-            <input type="text" onChange={(e) => setImage(e.target.value)} />
+            <input
+              type="text"
+              onChange={(e) => setImage(e.target.value)}
+              value={image}
+            />
           </div>
 
           <div>
@@ -59,17 +83,25 @@ const Dashboard = () => {
               rows={4}
               type="text"
               onChange={(e) => setDescription(e.target.value)}
+              value={description}
             ></textarea>
           </div>
 
           <div>
             <label>Precio: </label>
-            <input type="number" onChange={(e) => setPrice(e.target.value)} />
+            <input
+              type="number"
+              onChange={(e) => setPrice(e.target.value)}
+              value={price}
+            />
           </div>
 
           <div>
             <label>Categoría: </label>
-            <select onChange={(e) => setCategory(e.target.value)}>
+            <select
+              onChange={(e) => setCategory(e.target.value)}
+              value={category}
+            >
               <option selected>Elegir categoría</option>
               <option value="men's clothing">men's clothing</option>
               <option value="jewelery">jewelery</option>
@@ -78,7 +110,8 @@ const Dashboard = () => {
             </select>
           </div>
 
-          <button>Añadir producto</button>
+          <button>Agregar producto</button>
+          {error && <p>{error}</p>}
         </form>
 
         {succes && <p>{succes}</p>}

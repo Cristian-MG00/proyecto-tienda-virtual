@@ -12,6 +12,7 @@ const Home = () => {
   const [image, setImage] = useState("");
   const [productToEdit, setProductToEdit] = useState({});
   const [succes, setSucces] = useState("");
+  const [error, setError] = useState("");
 
   const { user } = useAuth();
 
@@ -48,6 +49,12 @@ const Home = () => {
   // por ultimo cambio el estado de succes por un mensaje de actualizacion exitosa
   const hundleSubmitPopup = async (e) => {
     e.preventDefault();
+
+    if (!name || !price || !description || !category || !image) {
+      setError("Debes completar todos los campos");
+      return;
+    }
+
     const updatedProduct = {
       id: productToEdit.id,
       title: name,
@@ -181,6 +188,7 @@ const Home = () => {
 
               <button>Actualizar</button>
 
+              {error && <p>{error}</p>}
               {succes && <p>{succes}</p>}
             </form>
           </div>
