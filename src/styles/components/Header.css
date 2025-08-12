@@ -1,0 +1,25 @@
+header {
+  background-color: #252440;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+img {
+  width: 80px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+a {
+  color: white;
+}

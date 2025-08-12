@@ -15,7 +15,6 @@ const Login = () => {
     e.preventDefault();
     const logged = await login(username, password);
     if (logged) {
-      console.log(logged);
       navigate("/");
     } else {
       setError("Datos incorrectos, intentelo nuevamente.");

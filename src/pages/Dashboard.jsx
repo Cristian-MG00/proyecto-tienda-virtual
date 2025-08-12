@@ -18,14 +18,14 @@ const Dashboard = () => {
     setAddedNewProduct(null);
 
     if (!name || !price || !description || !category || !image) {
-      setError("Debes completar todos los campos");
+      setError("Debes completar todos los campos y elegir una categoría");
       return;
     }
 
     const newProduct = {
       id: crypto.randomUUID(),
       title: name,
-      price: price,
+      price: Number(price),
       description: description,
       category: category,
       image: image,
@@ -40,6 +40,10 @@ const Dashboard = () => {
       },
       body: JSON.stringify(newProduct),
     });
+    if (!addProduct.ok) {
+      setError("Ha ocurrido un error, vuelve a intentarlo mas tarde");
+      return;
+    }
     const addedProduct = await addProduct.json();
     setAddedNewProduct(addedProduct);
 

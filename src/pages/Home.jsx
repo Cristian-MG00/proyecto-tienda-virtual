@@ -58,7 +58,7 @@ const Home = () => {
     const updatedProduct = {
       id: productToEdit.id,
       title: name,
-      price: price,
+      price: Number(price),
       description: description,
       category: category,
       image: image,
@@ -73,6 +73,11 @@ const Home = () => {
         body: JSON.stringify(updatedProduct),
       }
     );
+
+    if (!response.ok) {
+      setError("Ha ocurrido un error, vuelve a intentarlo mas tarde");
+      return;
+    }
     const updatedData = await response.json();
     console.log(updatedData);
     setProducts((prevProducts) =>

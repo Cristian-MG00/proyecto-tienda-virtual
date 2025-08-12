@@ -46,11 +46,11 @@ const Register = () => {
 
     if (registered) {
       setSucces("Registro realizado con exito!");
-      navigate("/");
+      setTimeout(() => {
+        navigate("/");
+      }, 3000);
     } else {
-      setError(
-        "Ha habido un error en el sistema, por favor intentalo de nuevo mas tarde"
-      );
+      setError("Ha ocurrido un error, vuelve a intentarlo mas tarde");
     }
   };
 

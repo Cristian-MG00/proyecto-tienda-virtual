@@ -1,0 +1,21 @@
+footer {
+  background-color: #252440;
+}
+
+.cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a img {
+  width: 40px;
+  height: 40px;
+  background-color: #252440;
+}
+
+.image-face {
+  width: 36px;
+  height: 36px;
+  padding-bottom: 2px;
+}
