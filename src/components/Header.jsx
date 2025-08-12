@@ -16,7 +16,7 @@ const Header = () => {
           <img src="tienda-virtual-icon.jpg" alt="Icono de tienda virtual" />
         </div>
         <div>
-          <ul>
+          <ul className="header-routes">
             {user && (
               <>
                 <li>

@@ -6,6 +6,8 @@ import { Register } from "../pages/Register";
 import { NotFound } from "../pages/NotFound";
 import { AboutUs } from "../pages/AboutUs";
 import { PrivateRoute } from "../components/PrivateRoute";
+import { PrivacyPolicy } from "../pages/footer/PrivacyPolicy";
+import { CookiePolicy } from "../pages/footer/CookiePolicy";
 
 const RouterApp = () => {
   return (
@@ -24,6 +26,8 @@ const RouterApp = () => {
         <Route path="/register" element={<Register />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/cookie-policy" element={<CookiePolicy />} />
       </Routes>
     </BrowserRouter>
   );

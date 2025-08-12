@@ -20,6 +20,6 @@ ul {
   gap: 15px;
 }
 
-a {
+.header-routes a {
   color: white;
 }

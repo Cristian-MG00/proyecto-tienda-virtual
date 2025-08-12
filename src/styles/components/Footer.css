@@ -1,21 +1,46 @@
 footer {
   background-color: #252440;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
 }
 
 .cont {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 20px;
 }
 
 a img {
-  width: 40px;
-  height: 40px;
-  background-color: #252440;
+  width: 30px;
+  height: 30px;
 }
 
 .image-face {
-  width: 36px;
-  height: 36px;
+  width: 27px;
+  height: 27px;
   padding-bottom: 2px;
+}
+
+.footer-routes {
+  color: white;
+  font-size: 15px;
+}
+
+.footer-routes a {
+  color: white;
+  font-size: 15px;
+}
+
+.footer-p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-p p {
+  color: white;
+  font-size: 12px;
 }
