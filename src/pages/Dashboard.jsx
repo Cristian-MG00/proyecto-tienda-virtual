@@ -21,6 +21,8 @@ const Dashboard = () => {
       image: image,
     };
 
+    console.log(newProduct);
+
     const addProduct = await fetch("https://fakestoreapi.com/products", {
       method: "POST",
       headers: {
@@ -53,10 +55,11 @@ const Dashboard = () => {
 
           <div>
             <label>Description: </label>
-            <input
+            <textarea
+              rows={4}
               type="text"
               onChange={(e) => setDescription(e.target.value)}
-            />
+            ></textarea>
           </div>
 
           <div>
@@ -65,8 +68,14 @@ const Dashboard = () => {
           </div>
 
           <div>
-            <label>Category: </label>
-            <input type="text" onChange={(e) => setCategory(e.target.value)} />
+            <label>Categoría: </label>
+            <select onChange={(e) => setCategory(e.target.value)}>
+              <option selected>Elegir categoría</option>
+              <option value="men's clothing">men's clothing</option>
+              <option value="jewelery">jewelery</option>
+              <option value="electronics">electronics</option>
+              <option value="women's clothing">women's clothing</option>
+            </select>
           </div>
 
           <button>Añadir producto</button>
