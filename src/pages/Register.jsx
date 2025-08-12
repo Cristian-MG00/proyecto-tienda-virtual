@@ -8,12 +8,33 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [succes, setSucces] = useState("");
+  const [error, setError] = useState("");
 
   const { register } = useAuth();
   const navigate = useNavigate();
 
   const hundleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!username || !email || !password) {
+      setError("Debes completar todos los campos");
+      return;
+    }
+    if (username.length < 6 && password.length < 6) {
+      setError(
+        "El nombre de usuario y la contraseña deben tener al menos 6 caracteres"
+      );
+      return;
+    }
+    if (username.length < 6 && password.length >= 6) {
+      setError("El nombre de usuario debe tener al menos 6 caracteres");
+      return;
+    }
+    if (username.length >= 6 && password.length < 6) {
+      setError("La contraseña debe tener al menos 6 caracteres");
+      return;
+    }
+
     const newUser = {
       id: crypto.randomUUID(),
       username: username,
@@ -27,7 +48,9 @@ const Register = () => {
       setSucces("Registro realizado con exito!");
       navigate("/");
     } else {
-      setError("Hay datos incorrectos, revisa e intenta de nuevo");
+      setError(
+        "Ha habido un error en el sistema, por favor intentalo de nuevo mas tarde"
+      );
     }
   };
 
@@ -39,17 +62,26 @@ const Register = () => {
         <form onSubmit={hundleSubmit}>
           <label>
             Nombre de usuario:
-            <input type="text" onChange={(e) => setUsername(e.target.value)} />
+            <input
+              type="text"
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Mínimo 6 caracteres"
+            />
           </label>
           <label>
             Correo electrónico:
-            <input type="email" onChange={(e) => setEmail(e.target.value)} />
+            <input
+              type="email"
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Ingresá un correo"
+            />
           </label>
           <label>
             Contraseña:
             <input
               type="password"
               onChange={(e) => setPassword(e.target.value)}
+              placeholder="Mínimo 6 caracteres"
             />
           </label>
           <button>Crear cuenta</button>
