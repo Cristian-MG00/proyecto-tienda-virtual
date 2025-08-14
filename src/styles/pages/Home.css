@@ -39,6 +39,13 @@
   border-radius: 20px;
 }
 
+.show-product .buttons-home button {
+  width: 130px;
+  height: 30px;
+  background-color: lightgray;
+  font-size: 20px;
+}
+
 .image-product {
   border-radius: 10px;
   background-color: white;
@@ -75,6 +82,9 @@
 .popup-update-home {
   /* border-top-left-radius: 20px;
   border-top-right-radius: 20px; */
+  position: absolute;
+  position: fixed;
+  top: 2%;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -82,7 +92,7 @@
   align-items: center;
   background-color: lavender;
   width: 800px;
-  height: 800px;
+  height: 750px;
   /* gap: 40px; */
 }
 
@@ -108,11 +118,11 @@
 }
 
 .text-update-home h2 {
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .text-update-home p {
-  font-size: 30px;
+  font-size: 25px;
   text-align: center;
 }
 
@@ -124,12 +134,12 @@
 }
 
 .popup-update-home .info-update-home label {
-  font-size: 25px;
+  font-size: 23px;
 }
 
 .popup-update-home .info-update-home input {
   width: 300px;
-  height: 40px;
+  height: 38px;
   border-radius: 14px;
   font-size: 18px;
 }
@@ -180,6 +190,7 @@
   font-size: 25px;
 }
 /* -------------------------------------- */
+/* Responsive design */
 /* -------------------------------------- */
 
 @media (max-width: 880px) {
@@ -187,9 +198,77 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
   }
+
+  .popup-update-home {
+    /* border-top-left-radius: 20px;
+  border-top-right-radius: 20px; */
+    position: absolute;
+    position: fixed;
+    top: 2%;
+    width: 640px;
+    height: 600px;
+    /* gap: 40px; */
+  }
+
+  /* .button-close-update {
+  background-color: blue;
+  width: 100%;
+  position: relative;
+}
+  */
+
+  .popup-update-home button {
+    font-size: 16px;
+    width: 64px;
+    height: 32px;
+  }
+
+  .text-update-home h2 {
+    font-size: 24px;
+  }
+
+  .text-update-home p {
+    font-size: 20px;
+  }
+
+  .popup-update-home .info-update-home label {
+    font-size: 19px;
+  }
+
+  .popup-update-home .info-update-home input {
+    width: 240px;
+    height: 31px;
+    font-size: 15px;
+  }
+
+  .popup-update-home .info-update-home textarea {
+    width: 240px;
+    height: 96px;
+  }
+
+  .popup-update-home .info-update-home select {
+    width: 200px;
+    height: 32px;
+  }
+
+  .popup-update-home .button-update-home button {
+    width: 144px;
+    height: 32px;
+    border-radius: 11px;
+    font-size: 16px;
+  }
+
+  .error-update-home p {
+    font-size: 20px;
+  }
+
+  .succes-update-home p {
+    font-size: 20px;
+  }
 }
 
-/* Responsive design */
+/* Responsive design celulares */
+/* -------------------------------------------- */
 @media (max-width: 480px) {
   .home-top h1 {
     font-size: 40px;
@@ -213,5 +292,69 @@
   /* contenedor de productos con grid */
   .cont-products {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  /* hasta aca */
+  .popup-update-home {
+    /* border-top-left-radius: 20px;
+  border-top-right-radius: 20px; */
+    width: 420px;
+    height: 562px;
+    /* gap: 40px; */
+  }
+
+  /* .button-close-update {
+  background-color: blue;
+  width: 100%;
+  position: relative;
+}
+  */
+
+  .popup-update-home button {
+    font-size: 15px;
+    width: 60px;
+    height: 30px;
+  }
+
+  .text-update-home h2 {
+    font-size: 22px;
+  }
+
+  .text-update-home p {
+    font-size: 18px;
+  }
+
+  .popup-update-home .info-update-home label {
+    font-size: 17px;
+  }
+
+  .popup-update-home .info-update-home input {
+    width: 225px;
+    height: 28px;
+    font-size: 13px;
+  }
+
+  .popup-update-home .info-update-home textarea {
+    width: 225px;
+    height: 90px;
+  }
+
+  .popup-update-home .info-update-home select {
+    width: 187px;
+    height: 30px;
+  }
+
+  .popup-update-home .button-update-home button {
+    width: 135px;
+    height: 30px;
+    font-size: 15px;
+  }
+
+  .error-update-home p {
+    font-size: 18px;
+  }
+
+  .succes-update-home p {
+    font-size: 18px;
   }
 }

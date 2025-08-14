@@ -42,6 +42,13 @@ header {
   margin-left: 30px;
 }
 
+.header-routes button {
+  width: 140px;
+  height: 37px;
+  border-radius: 20px;
+  font-size: 18px;
+}
+
 /* responsive design para tablet */
 @media (max-width: 880px) {
   .image-icon img {

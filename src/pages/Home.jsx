@@ -35,6 +35,9 @@ const Home = () => {
   // Le doy a los estados que simulan a las propiedades el valor de las propiedades actuales del producto iterado (traído como parametro)
   // Cambio el valor del estado setProductToEdit por el producto iterado.
   const showPopup = (product) => {
+    setError("");
+    setSucces("");
+
     setPopup(true);
     setName(product.title);
     setPrice(product.price);
@@ -248,7 +251,7 @@ const Home = () => {
                   <strong>Precio: ${product.price}</strong>
                 </p>
                 {user && (
-                  <div>
+                  <div className="buttons-home">
                     <button onClick={() => showPopup(product)}>
                       Actualizar
                     </button>
