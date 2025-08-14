@@ -127,6 +127,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  /* height: 200px;
+  width: 100px; */
 }
 
 .image-product-dashboard img {
@@ -140,7 +142,129 @@
 }
 
 .info-product-dashboard {
-  font-size: 18px;
+  font-size: 22px;
   margin: 8px;
   font-weight: 400;
+}
+
+/* --------------------------- */
+/* --------------------------- */
+/* responsive design */
+
+@media (max-width: 880px) {
+}
+
+@media (max-width: 480px) {
+  .cont-dashboard {
+    /* background-color: aqua; */
+    /* height: 100%;
+    width: 100%; */
+  }
+  /* ------------------------------- */
+  .cart-dashboard {
+    width: 680px;
+    height: 608px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  /* -------------------------------- */
+
+  .text-dashboard h1 {
+    font-size: 36px;
+  }
+
+  .text-dashboard h2 {
+    font-size: 24px;
+  }
+
+  .text-dashboard h3 {
+    font-size: 21px;
+  }
+
+  /* --------------------------------- */
+
+  .form-dashboard .input-dashboard label {
+    font-size: 20px;
+  }
+
+  .form-dashboard .input-dashboard input {
+    width: 264px;
+    height: 37px;
+    font-size: 18px;
+  }
+
+  .form-dashboard .input-dashboard textarea {
+    width: 264px;
+    height: 96px;
+    font-size: 18px;
+  }
+
+  .form-dashboard .input-dashboard select {
+    width: 200px;
+    height: 28px;
+    font-size: 18px;
+  }
+
+  .form-dashboard .button-dashboard {
+    margin-top: 12px;
+  }
+
+  .form-dashboard .button-dashboard button {
+    width: 160px;
+    height: 36px;
+    font-size: 18px;
+    background-color: #a3ad11;
+  }
+
+  .error-dashboard {
+    margin-top: 6px;
+  }
+
+  .error-dashboard p {
+    font-size: 24px;
+  }
+
+  .succes-dashboard {
+    margin-top: 6px;
+  }
+
+  .succes-dashboard p {
+    color: green;
+    font-size: 24px;
+  }
+
+  /* --------------------- */
+
+  .new-product-dashboard {
+    /* background-color: blueviolet; */
+    background-color: lavender;
+    /* padding: 20px; */
+    text-align: center;
+    box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.123);
+    border-radius: 20px;
+  }
+
+  .image-product-dashboard {
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .image-product-dashboard img {
+    width: 100px;
+    height: 143px;
+  }
+
+  .price-product-dashboard {
+    font-size: 27px;
+    margin: 10px;
+  }
+
+  .info-product-dashboard {
+    font-size: 18px;
+    margin: 8px;
+    font-weight: 400;
+  }
 }
