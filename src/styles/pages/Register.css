@@ -111,3 +111,70 @@
   font-size: 30px;
   text-align: center;
 }
+
+/* ----------------------*/
+/* --------------------- */
+@media (max-width: 880px) {
+}
+
+@media (max-width: 480px) {
+  .cart-register {
+    width: 400px;
+    height: 590px;
+    margin-top: 23px;
+    margin-bottom: 23px;
+    border-radius: 15px;
+  }
+
+  .text-register h2 {
+    font-size: 53px;
+  }
+
+  .text-register h3 {
+    font-size: 27px;
+  }
+
+  .text-register p {
+    font-size: 22px;
+  }
+
+  .form-register {
+    gap: 12px;
+  }
+
+  .inputs-register label {
+    font-size: 21px;
+  }
+
+  .inputs-register input {
+    width: 270px;
+    height: 35px;
+    border-radius: 14px;
+    padding-left: 8px;
+    font-size: 20px;
+  }
+
+  .form-register button {
+    width: 136px;
+    height: 33px;
+    font-size: 17px;
+  }
+
+  .error-register {
+    /* duda */
+    padding: 10px;
+  }
+
+  .succes-register {
+    /* duda */
+    padding: 10px;
+  }
+
+  .error-register p {
+    font-size: 23px;
+  }
+
+  .succes-register p {
+    font-size: 23px;
+  }
+}
