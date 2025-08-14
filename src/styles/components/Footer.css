@@ -1,46 +1,75 @@
 footer {
   background-color: #252440;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 10px;
+  height: 150px;
+
+  color: white;
+  padding: 10px 20px;
 }
 
-.cont {
+.footer-top {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
+  margin: 10px;
 }
 
-a img {
+.footer-top .icon-tv-footer {
+  width: 120px;
+  height: 80px;
+}
+
+.footer-routes,
+.footer-routes a {
+  color: white;
+  font-size: 20px;
+}
+
+.footer-networks .icon-network {
   width: 30px;
   height: 30px;
+  margin-left: 5px;
 }
 
+/* icono de facebook es mas grande que los otros por eso modifico su tamaño y lo igualo a los otros */
 .image-face {
   width: 27px;
   height: 27px;
   padding-bottom: 2px;
-}
-
-.footer-routes {
-  color: white;
-  font-size: 15px;
-}
-
-.footer-routes a {
-  color: white;
-  font-size: 15px;
+  margin-left: 5px;
 }
 
 .footer-p {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 10px;
 }
 
 .footer-p p {
   color: white;
-  font-size: 12px;
+  font-size: 15px;
+}
+
+/* responsive design celular */
+@media (max-width: 480px) {
+  .footer-top .icon-tv-footer {
+    width: 100px;
+    height: 60px;
+  }
+
+  .footer-routes span {
+    display: none;
+  }
+
+  .footer-routes a {
+    display: block;
+    font-size: 15px;
+  }
+
+  .footer-p p {
+    color: white;
+    font-size: 14px;
+    text-align: center;
+  }
 }

@@ -1,3 +1,4 @@
+import "../styles/pages/Home.css";
 import { useState, useEffect } from "react";
 import { Layout } from "../components/Layout";
 import { useAuth } from "../context/UserContext";
@@ -126,9 +127,10 @@ const Home = () => {
   return (
     <Layout>
       <section>
-        <h1>Tienda Virtual</h1>
-        <h2>Nuestros productos</h2>
-        <div>
+        <div className="home-top">
+          <h1>Tienda Virtual</h1>
+          <h2>Buscá entre nuestros productos</h2>
+
           <input
             type="text"
             placeholder="Buscar Producto"
@@ -199,34 +201,42 @@ const Home = () => {
           </div>
         )}
 
-        {products.map((product) => {
-          return (
-            <div>
-              <p>
-                <strong>Producto: </strong>
-                {product.title}
-              </p>
-              <img style={{ width: "80px" }} src={product.image} alt="" />
-              <p>
-                <strong>Descripción: </strong>
-                {product.description}
-              </p>
-              <p>
-                <strong>Precio: </strong>
-                {product.price}
-              </p>
-              <p>{product.category}</p>
-              {user && (
-                <div>
-                  <button onClick={() => showPopup(product)}>Actualizar</button>
-                  <button onClick={() => hundleDelete(product.id)}>
-                    Eliminar
-                  </button>
+        <div className="cont-products">
+          {products.map((product) => {
+            return (
+              <div className="show-product">
+                <div className="image-product">
+                  <img src={product.image} alt="" />
                 </div>
-              )}
-            </div>
-          );
-        })}
+                <p className="info-product">
+                  <strong>Producto: </strong>
+                  {product.title}
+                </p>
+                <p className="info-product">
+                  <strong>Descripción: </strong>
+                  {product.description}
+                </p>
+                <p className="info-product">
+                  <strong>Categoría: </strong>
+                  {product.category}
+                </p>
+                <p className="price-product">
+                  <strong>Precio: ${product.price}</strong>
+                </p>
+                {user && (
+                  <div>
+                    <button onClick={() => showPopup(product)}>
+                      Actualizar
+                    </button>
+                    <button onClick={() => hundleDelete(product.id)}>
+                      Eliminar
+                    </button>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
       </section>
     </Layout>
   );

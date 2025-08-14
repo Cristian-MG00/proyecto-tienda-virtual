@@ -1,20 +1,33 @@
-header {
+/* header {
   background-color: #252440;
-}
+} */
 
-nav {
+header {
+  height: 100px;
+  background-color: #252440;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 10px;
-  padding-right: 10px;
+  color: white;
+  padding: 10px 20px;
 }
 
-img {
-  width: 80px;
+.image-icon img {
+  width: 180px;
 }
 
-ul {
+/* hamburguer button */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* routes */
+.header-routes {
   list-style: none;
   display: flex;
   gap: 15px;
@@ -22,4 +35,28 @@ ul {
 
 .header-routes a {
   color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+/* responsive design movil */
+@media (max-width: 480px) {
+  .hamburger {
+    display: block;
+  }
+
+  .header-routes {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #444;
+    padding: 10px;
+    display: none;
+  }
+
+  .header-routes.active {
+    display: flex;
+  }
 }
