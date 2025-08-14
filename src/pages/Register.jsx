@@ -1,3 +1,4 @@
+import "../styles/pages/Register.css";
 import { useState } from "react";
 import { Layout } from "../components/Layout";
 import { useAuth } from "../context/UserContext";
@@ -15,6 +16,8 @@ const Register = () => {
 
   const hundleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
+    setSucces("");
 
     if (!username || !email || !password) {
       setError("Debes completar todos los campos");
@@ -56,50 +59,60 @@ const Register = () => {
 
   return (
     <Layout>
-      <section>
-        <h2>Creá tu cuenta</h2>
-        <p>Ingresá tus datos</p>
-        <form onSubmit={hundleSubmit}>
-          <div>
-            <label>Nombre de usuario: </label>
-            <input
-              type="text"
-              onChange={(e) => setUsername(e.target.value)}
-              placeholder="Mínimo 6 caracteres"
-            />
+      <div className="cont-register">
+        <section className="cart-register">
+          <div className="text-register">
+            <h2>Tienda virtual</h2>
+            <h3>Bienvenido!</h3>
+            <h3>Aquí podes crear tu cuenta de forma facil y rápida</h3>
+            <p>Ingresá los siguientes datos</p>
           </div>
+          <div className="cont-form-register">
+            <form onSubmit={hundleSubmit}>
+              <div className="form-register">
+                <div className="inputs-register">
+                  <label>Nombre de usuario: </label>
+                  <input
+                    type="text"
+                    onChange={(e) => setUsername(e.target.value)}
+                    placeholder="Mínimo 6 caracteres"
+                  />
+                </div>
 
-          <div>
-            <label>Correo electrónico: </label>
-            <input
-              type="email"
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Ingresá un correo"
-            />
+                <div className="inputs-register">
+                  <label>Correo electrónico: </label>
+                  <input
+                    type="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Ingresá un correo"
+                  />
+                </div>
+
+                <div className="inputs-register">
+                  <label>Contraseña: </label>
+                  <input
+                    type="password"
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Mínimo 6 caracteres"
+                  />
+                </div>
+
+                <button>Crear cuenta</button>
+              </div>
+              {error && (
+                <div className="error-register">
+                  <p>{error}</p>
+                </div>
+              )}
+              {succes && (
+                <div className="succes-register">
+                  <p>{succes}</p>
+                </div>
+              )}
+            </form>
           </div>
-
-          <div>
-            <label>Contraseña: </label>
-            <input
-              type="password"
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Mínimo 6 caracteres"
-            />
-          </div>
-
-          <button>Crear cuenta</button>
-          {error && (
-            <div>
-              <p>{error}</p>
-            </div>
-          )}
-          {succes && (
-            <div>
-              <p>{succes}</p>
-            </div>
-          )}
-        </form>
-      </section>
+        </section>
+      </div>
     </Layout>
   );
 };

@@ -1,0 +1,113 @@
+.cont-register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+/* --------------------------------- */
+
+.cart-register {
+  background-color: #cbd1d4;
+  width: 650px;
+  height: 720px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+}
+
+/* ----------------------------------- */
+
+.cart-register .text-register {
+  /* background-color: antiquewhite; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border-top-left-radius: 20px;
+  border-top-right-radius: 20px; */
+}
+
+.text-register h2 {
+  font-size: 70px;
+  color: goldenrod;
+}
+
+.text-register h3 {
+  font-size: 33px;
+  text-align: center;
+}
+
+.text-register p {
+  font-size: 25px;
+}
+
+/* ------------------------------- */
+
+.cont-form-register {
+  /* background-color: cadetblue; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+}
+
+.form-register .inputs-register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputs-register label {
+  font-size: 25px;
+}
+
+.inputs-register input {
+  width: 280px;
+  height: 40px;
+  border-radius: 15px;
+  padding-left: 10px;
+  font-size: 23px;
+}
+
+.form-register button {
+  width: 170px;
+  height: 40px;
+  background-color: green;
+  border-radius: 18px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.error-register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+
+.succes-register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+
+.error-register p {
+  color: red;
+  font-size: 30px;
+  text-align: center;
+}
+
+.succes-register p {
+  color: green;
+  font-size: 30px;
+  text-align: center;
+}
