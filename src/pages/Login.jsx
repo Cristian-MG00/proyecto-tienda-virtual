@@ -24,29 +24,53 @@ const Login = () => {
 
   return (
     <Layout>
-      <section>
-        <h2>Ingresa a tu cuenta</h2>
-        <div>
-          <h4>Datos de prueba</h4>
-          <p>Nombre de usuario: hopkins</p>
-          <p>Contraseña: William56$hj</p>
-        </div>
-        <form onSubmit={hundleSubmit}>
-          <div>
-            <label>Nombre de usuario: </label>
-            <input type="text" onChange={(e) => setUsername(e.target.value)} />
+      <div className="cont-login">
+        <section className="cart-login">
+          <div className="text-login">
+            <h2>Tienda Virtual</h2>
+            <h3>Bienvenido!</h3>
+            <h3>Aqui podras ingresar a tu cuenta</h3>
+            <p>Ingresa tus datos a continuación</p>
           </div>
-          <div>
-            <label>Contraseña: </label>
-            <input
-              type="password"
-              onChange={(e) => setPassword(e.target.value)}
-            />
+          <div className="test-data">
+            <h4>Datos de prueba</h4>
+            <p>
+              Nombre de usuario: hopkins <br />
+              Contraseña: William56$hj
+            </p>
           </div>
-          <button>Ingresar</button>
-          {error && <p>{error}</p>}
-        </form>
-      </section>
+          <div className="login-form">
+            <form onSubmit={hundleSubmit}>
+              <div className="inputs">
+                <div>
+                  {/* <label>Nombre de usuario: </label> */}
+                  <input
+                    type="text"
+                    placeholder="Nombre de usuario"
+                    onChange={(e) => setUsername(e.target.value)}
+                  />
+                </div>
+                <div>
+                  {/* <label>Contraseña: </label> */}
+                  <input
+                    type="password"
+                    placeholder="Contraseña"
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </div>
+              </div>
+              <div className="button">
+                <button>Ingresar</button>
+              </div>
+              {error && (
+                <div className="error">
+                  <p>{error}</p>
+                </div>
+              )}
+            </form>
+          </div>
+        </section>
+      </div>
     </Layout>
   );
 };

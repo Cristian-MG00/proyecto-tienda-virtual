@@ -1,0 +1,149 @@
+.cont-login {
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* --------------------------- */
+
+.cart-login {
+  background-color: #cbd1d4;
+  width: 650px;
+  height: 670px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.123);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ------------------------- */
+
+.text-login {
+  /* background-color: cadetblue; */
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.text-login h2 {
+  font-size: 50px;
+  font-weight: 900;
+  color: goldenrod;
+}
+
+.text-login h3 {
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.text-login p {
+  font-size: 25px;
+}
+
+/* ------------------------- */
+
+.test-data p {
+  font-size: 22px;
+}
+
+/* ------------------------- */
+.login-form .inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form input {
+  width: 280px;
+  height: 40px;
+  border-radius: 15px;
+  padding-left: 10px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.login-form .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form button {
+  width: 170px;
+  height: 40px;
+  background-color: green;
+  border-radius: 18px;
+  font-size: 21px;
+  text-align: center;
+}
+
+.login-form .error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form .error p {
+  font-size: 25px;
+  color: red;
+}
+
+/* ------------------------------------------ */
+/* ------------------------------------------ */
+
+/* responsive design para tablet */
+@media (max-width: 880px) {
+}
+
+/* responsive design para celular */
+@media (max-width: 480px) {
+  .cart-login {
+    width: 433px;
+    height: 466px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  /* ------------------------- */
+  .text-login h2 {
+    font-size: 34px;
+  }
+
+  .text-login h3 {
+    font-size: 25px;
+  }
+
+  .text-login p {
+    font-size: 20px;
+  }
+
+  /* ------------------------ */
+  .test-data p {
+    font-size: 17px;
+  }
+  /* --------------------------*/
+  .login-form input {
+    width: 200px;
+    height: 35px;
+    padding-left: 10px;
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+
+  .login-form button {
+    width: 125px;
+    height: 32px;
+    border-radius: 18px;
+    font-size: 18px;
+  }
+
+  .login-form .error p {
+    font-size: 16px;
+  }
+}
