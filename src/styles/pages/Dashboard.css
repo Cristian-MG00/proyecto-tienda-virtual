@@ -1,0 +1,146 @@
+.cont-dashboard {
+  /* background-color: aqua; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* ------------------------------- */
+.cart-dashboard {
+  background-color: lavender;
+  width: 850px;
+  height: 760px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+/* -------------------------------- */
+.cont-text-dashboard {
+  /* background-color: burlywood; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-dashboard h1 {
+  font-size: 45px;
+}
+
+.text-dashboard h2 {
+  font-size: 30px;
+}
+
+.text-dashboard h3 {
+  font-size: 26px;
+}
+
+/* --------------------------------- */
+.form-dashboard {
+  /* background-color: chartreuse; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-dashboard .input-dashboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-dashboard .input-dashboard label {
+  font-size: 25px;
+}
+
+.form-dashboard .input-dashboard input {
+  width: 330px;
+  height: 42px;
+  border-radius: 14px;
+  font-size: 23px;
+}
+
+.form-dashboard .input-dashboard textarea {
+  width: 330px;
+  height: 120px;
+  font-size: 23px;
+}
+
+.form-dashboard .input-dashboard select {
+  width: 250px;
+  height: 35px;
+  font-size: 23px;
+}
+
+.form-dashboard .button-dashboard {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-dashboard .button-dashboard button {
+  width: 200px;
+  height: 45px;
+  font-size: 23px;
+  background-color: #a3ad11;
+}
+
+.error-dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7px;
+}
+
+.error-dashboard p {
+  color: red;
+  font-size: 30px;
+}
+
+.succes-dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7px;
+}
+
+.succes-dashboard p {
+  color: green;
+  font-size: 30px;
+}
+
+/* --------------------- */
+
+.new-product-dashboard {
+  /* background-color: blueviolet; */
+  background-color: lavender;
+  /* padding: 20px; */
+  text-align: center;
+  box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.123);
+  border-radius: 20px;
+}
+
+.image-product-dashboard {
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-product-dashboard img {
+  width: 100px;
+  height: 143px;
+}
+
+.price-product-dashboard {
+  font-size: 27px;
+  margin: 10px;
+}
+
+.info-product-dashboard {
+  font-size: 18px;
+  margin: 8px;
+  font-weight: 400;
+}
