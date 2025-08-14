@@ -51,6 +51,9 @@ const Home = () => {
   const hundleSubmitPopup = async (e) => {
     e.preventDefault();
 
+    setSucces("");
+    setError("");
+
     if (!name || !price || !description || !category || !image) {
       setError("Debes completar todos los campos");
       return;
@@ -137,67 +140,88 @@ const Home = () => {
             onChange={(e) => searchBar(e)}
           />
         </div>
+
         {popup && (
-          <div>
-            <button onClick={removePopup}>Cerrar</button>
-            <h2>Actualizar datos</h2>
-            <form onSubmit={(e) => hundleSubmitPopup(e)}>
-              <div>
-                <label>Nombre: </label>
-                <input
-                  type="text"
-                  placeholder="Nombre"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
+          <div className="cont-popup-home">
+            <div className="popup-update-home">
+              <button onClick={removePopup}>
+                <strong>Cerrar</strong>
+              </button>
+              <div className="text-update-home">
+                <h2>Actualizar datos</h2>
+                <p>
+                  Añadí actualizaciones en tus productos completando el
+                  formulario
+                </p>
               </div>
+              <form onSubmit={(e) => hundleSubmitPopup(e)}>
+                <div className="info-update-home">
+                  <label>Nombre: </label>
+                  <input
+                    type="text"
+                    placeholder="Nombre"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </div>
 
-              <div>
-                <label>Precio: </label>
-                <input
-                  type="number"
-                  placeholder="Precio"
-                  value={price}
-                  onChange={(e) => setPrice(e.target.value)}
-                />
-              </div>
+                <div className="info-update-home">
+                  <label>Precio: </label>
+                  <input
+                    type="number"
+                    placeholder="Precio"
+                    value={price}
+                    onChange={(e) => setPrice(e.target.value)}
+                  />
+                </div>
 
-              <div>
-                <label>Descripción: </label>
-                <textarea
-                  type="text"
-                  placeholder="Descripción"
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                ></textarea>
-              </div>
+                <div className="info-update-home">
+                  <label>Descripción: </label>
+                  <textarea
+                    type="text"
+                    placeholder="Descripción"
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                  ></textarea>
+                </div>
 
-              <div>
-                <label>Categoría: </label>
-                <select onChange={(e) => setCategory(e.target.value)}>
-                  <option selected>Elegir categoría</option>
-                  <option value="men's clothing">men's clothing</option>
-                  <option value="jewelery">jewelery</option>
-                  <option value="electronics">electronics</option>
-                  <option value="women's clothing">women's clothing</option>
-                </select>
-              </div>
+                <div className="info-update-home">
+                  <label>Categoría: </label>
+                  <select onChange={(e) => setCategory(e.target.value)}>
+                    <option selected>Elegir categoría</option>
+                    <option value="men's clothing">men's clothing</option>
+                    <option value="jewelery">jewelery</option>
+                    <option value="electronics">electronics</option>
+                    <option value="women's clothing">women's clothing</option>
+                  </select>
+                </div>
 
-              <div>
-                <label>image: </label>
-                <input
-                  type="text"
-                  placeholder="URL de la imagen"
-                  value={image}
-                  onChange={(e) => setImage(e.target.value)}
-                />
-              </div>
+                <div className="info-update-home">
+                  <label>image: </label>
+                  <input
+                    type="text"
+                    placeholder="URL de la imagen"
+                    value={image}
+                    onChange={(e) => setImage(e.target.value)}
+                  />
+                </div>
 
-              <button>Actualizar</button>
+                <div className="button-update-home">
+                  <button>Actualizar</button>
+                </div>
 
-              {error && <p>{error}</p>}
-              {succes && <p>{succes}</p>}
-            </form>
+                {error && (
+                  <div className="error-update-home">
+                    <p>{error}</p>
+                  </div>
+                )}
+                {succes && (
+                  <div className="succes-update-home">
+                    <p>{succes}</p>
+                  </div>
+                )}
+              </form>
+            </div>
           </div>
         )}
 

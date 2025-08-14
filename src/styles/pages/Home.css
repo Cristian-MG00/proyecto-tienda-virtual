@@ -63,6 +63,132 @@
   font-weight: 400;
 }
 
+/* --------------------------------- */
+.cont-popup-home {
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.popup-update-home {
+  /* border-top-left-radius: 20px;
+  border-top-right-radius: 20px; */
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: lavender;
+  width: 800px;
+  height: 800px;
+  /* gap: 40px; */
+}
+
+/* .button-close-update {
+  background-color: blue;
+  width: 100%;
+  position: relative;
+}
+  */
+
+.popup-update-home button {
+  font-size: 20px;
+  color: black;
+  width: 80px;
+  height: 40px;
+}
+
+.text-update-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-update-home h2 {
+  font-size: 40px;
+}
+
+.text-update-home p {
+  font-size: 30px;
+  text-align: center;
+}
+
+.popup-update-home .info-update-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-update-home .info-update-home label {
+  font-size: 25px;
+}
+
+.popup-update-home .info-update-home input {
+  width: 300px;
+  height: 40px;
+  border-radius: 14px;
+  font-size: 18px;
+}
+
+.popup-update-home .info-update-home textarea {
+  width: 300px;
+  height: 120px;
+}
+
+.popup-update-home .info-update-home select {
+  width: 250px;
+  height: 40px;
+}
+
+.popup-update-home .button-update-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-update-home .button-update-home button {
+  width: 180px;
+  height: 40px;
+  background-color: #ffd700;
+  border-radius: 14px;
+  font-size: 20px;
+}
+
+.error-update-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-update-home p {
+  color: red;
+  font-size: 25px;
+}
+
+.succes-update-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.succes-update-home p {
+  color: green;
+  font-size: 25px;
+}
+/* -------------------------------------- */
+/* -------------------------------------- */
+
+@media (max-width: 880px) {
+  .cont-products {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+  }
+}
+
 /* Responsive design */
 @media (max-width: 480px) {
   .home-top h1 {
@@ -87,12 +213,5 @@
   /* contenedor de productos con grid */
   .cont-products {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
-}
-
-@media (max-width: 880px) {
-  .cont-products {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
   }
 }
