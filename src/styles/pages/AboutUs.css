@@ -1,0 +1,69 @@
+.cont-aboutus {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-aboutus {
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.text-aboutus h1 {
+  font-size: 47px;
+}
+
+.text-aboutus .section-aboutus h3 {
+  font-size: 40px;
+}
+
+.text-aboutus .section-aboutus p {
+  font-size: 25px;
+}
+
+/* ---------------------------------------- */
+/* Responsive design */
+/* ---------------------------------------- */
+
+@media (max-width: 880px) {
+  .text-aboutus {
+    width: 720px;
+    gap: 16px;
+  }
+
+  .text-aboutus h1 {
+    font-size: 37px;
+  }
+
+  .text-aboutus .section-aboutus h3 {
+    font-size: 32px;
+  }
+
+  .text-aboutus .section-aboutus p {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-aboutus {
+    width: 440px;
+    gap: 15px;
+  }
+
+  .text-aboutus h1 {
+    font-size: 35px;
+  }
+
+  .text-aboutus .section-aboutus h3 {
+    font-size: 30px;
+  }
+
+  .text-aboutus .section-aboutus p {
+    font-size: 18px;
+  }
+}
